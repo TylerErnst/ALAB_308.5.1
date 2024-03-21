@@ -89,10 +89,6 @@ printNumbers(5,10);
 
 
 
-
-
-
-
 // Part 2: Thinking Methodically
 
 // When functions are built into objects, like Arrays, they are referred to as “methods” of those objects.
@@ -217,7 +213,4 @@ console.log(cloneA);
 
 
 
-// Thought experiment: since the Date object is an object, what would happen if we modified it in the copy of
-// the object created in the second function using setTime() or another method? How could we circumvent
-// potentially undesired behavior?
 
