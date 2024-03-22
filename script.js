@@ -119,18 +119,20 @@ console.log(removeAge(testData, 50));
 
 // Map the array to change the “occupation” key to “job” and increment every age by 1.
 
-function part2 (people){
-    const newPeople = people.map(({
-        id,
-        name,
-        occupation: job,
-        ...rest
-      }) => ({
-        id,
-        name,
-        job,
-        ...rest
-      }));
+function changeKey (people, orginalKey, newKey){
+    const newPeople = people.map((person) => {
+        old_key = orginalKey;
+        new_key = newKey;
+        
+        if (old_key !== new_key) {
+            //person[ new_key ] = person[ old_key ];
+             Object.defineProperty(person, new_key,
+                 Object.getOwnPropertyDescriptor(person, old_key));
+            delete person[old_key];
+        }
+        
+        return person;
+      });
       newPeople.forEach (person => {
         //person.age++;
         increaseAge(person); //function created in step3 later on
@@ -138,7 +140,7 @@ function part2 (people){
     return newPeople;
 }
 
-console.log(part2(testData))
+console.log(changeKey(testData, 'occupation', 'job'))
 
 
 // Use the reduce method to calculate the sum of the ages.
@@ -214,3 +216,43 @@ console.log(cloneA);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+//old code
+
+
+
+
+
+
+
+// function part2 (people){
+//     const newPeople = people.map(({
+//         id,
+//         name,
+//         occupation: job,
+//         ...rest
+//       }) => ({
+//         id,
+//         name,
+//         job,
+//         ...rest
+//       }));
+//       newPeople.forEach (person => {
+//         //person.age++;
+//         increaseAge(person); //function created in step3 later on
+//       });
+//     return newPeople;
+// }
+
+// console.log(part2(testData))
