@@ -132,7 +132,7 @@ function changeKey (people, orginalKey, newKey){
       });
       newPeople.forEach (person => {
         //person.age++;
-        increaseAge(person); //function created in step3 later on
+        increaseAge(person); //function created in Part3 later on
       });
     return newPeople;
 }
