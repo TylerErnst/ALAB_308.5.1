@@ -108,10 +108,7 @@ console.log(testData);
 
 // Filter the array to remove entries with an age greater than 50.
 function removeAge(people, age){
-    const youngPeople = people.filter(person => {
-        return person.age < age;
-    })
-    return youngPeople;
+    return people.filter(person => person.age < age)
 }
 
 console.log(removeAge(testData, 50));
